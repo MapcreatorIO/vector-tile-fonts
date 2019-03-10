@@ -122,9 +122,9 @@ fs.readdirSync(args.input).forEach(function(dir) {
 			fonts = [];
 			fs.readdirSync(full_path).forEach(function(file) {
 				if (path.extname(file) == '.ttf' || path.extname(file) == '.otf') {
-					var rex = /([A-Z])([A-Z])([a-z])|([a-z])([A-Z])/g;
+					// var rex = /([A-Z])([A-Z])([a-z])|([a-z])([A-Z])/g;
 					fonts.push({
-						name: path.basename(file).slice(0, -4).replace('-', '').replace(rex, '$1$4 $2$3$5'),
+						name: path.basename(file).slice(0, -4),
 						sources: [
 							path.basename(file)
 						]
