@@ -15,6 +15,6 @@ for root, dirs, files in os.walk('fonts'):
             copyfile(path, os.path.join('ttf', f))
         elif extension == '.otf':
             print(f"[+] Converting {path!r}")
-            fontforge.open(path).generate(os.path.join('ttf', name + '.otf'))
+            fontforge.open(path).generate(os.path.join('ttf', name + '.ttf'))
         else:
             print(f"[-] Extension not recognized {extension!r}")
